@@ -603,6 +603,15 @@
             overflow: hidden;
         }
 
+        .portfolio-image-fallback {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            color: var(--color-text-muted);
+            font-size: var(--fs-sm);
+        }
+
         .portfolio-img img {
             width: 100%;
             height: 100%;
@@ -1517,140 +1526,7 @@
         lucide.createIcons();
 
         // Portfolio Data
-        const portfolioProjects = [
-            {
-                id: 1,
-                title: "Seacoast Floor Supply",
-                category: "WooCommerce",
-                industry: "Flooring & Manufacturing",
-                description: "A complex flooring product platform with custom pricing calculation logic, bulk order handling, and integrated logistics. Optimized for high-volume transactions.",
-                technologies: ["WordPress", "PHP", "MySQL", "AJAX", "ACF Pro"],
-                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: true
-            },
-            {
-                id: 2,
-                title: "Custom Search Engine API",
-                category: "API & Integrations",
-                industry: "SaaS / Enterprise",
-                description: "Developed a custom REST API based search engine that aggregates data from multiple WP sites with sub-second response times using specialized MySQL indexing.",
-                technologies: ["PHP", "REST API", "MySQL Indexing", "Transient API"],
-                image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: true
-            },
-            {
-                id: 3,
-                title: "Project Cost Calculator",
-                category: "Custom Plugins",
-                industry: "Real Estate & Construction",
-                description: "A sophisticated multi-step estimation tool with dynamic math engines, PDF generation, and lead capture integration for large-scale construction firms.",
-                technologies: ["JavaScript", "WordPress Plugin API", "MPDF", "jQuery"],
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: true
-            },
-            {
-                id: 4,
-                title: "Automated Backup & Sync",
-                category: "WordPress Development",
-                industry: "DevOps",
-                description: "Custom WP-Cron based backup solution that synchronizes database and assets to AWS S3 with detailed logging and failure notifications.",
-                technologies: ["AWS S3", "WP-Cron", "PHP", "Git"],
-                image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: false
-            },
-            {
-                id: 5,
-                title: "Global Membership Portal",
-                category: "API & Integrations",
-                industry: "Education / NGO",
-                description: "Complex membership system integrated with MemberPress and external CRM via Webhooks. Includes custom dashboard and resource restriction logic.",
-                technologies: ["MemberPress", "Webhooks", "Zapier", "PHP"],
-                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: false
-            },
-            {
-                id: 6,
-                title: "Multisite Performance Suite",
-                category: "WordPress Development",
-                industry: "Tech",
-                description: "A performance optimization layer for a 50+ site network, reducing load times by 60% through object caching and global CDN orchestration.",
-                technologies: ["Redis", "Cloudflare API", "Object Cache", "PHP"],
-                image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: true
-            },
-            {
-                id: 7,
-                title: "Headless WooCommerce PWA",
-                category: "API & Integrations",
-                industry: "E-commerce",
-                description: "Decoupled WooCommerce frontend built as a Progressive Web App using Next.js, with real-time cart sync and offline capabilities.",
-                technologies: ["Next.js", "WooCommerce REST API", "GraphQL", "Service Workers"],
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: true
-            },
-            {
-                id: 8,
-                title: "Custom CRM Integration Plugin",
-                category: "Custom Plugins",
-                industry: "Sales & Marketing",
-                description: "Bi-directional sync between WordPress forms and HubSpot/Salesforce with custom field mapping and conflict resolution.",
-                technologies: ["PHP", "REST API", "OAuth 2.0", "Webhooks"],
-                image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: false
-            },
-            {
-                id: 9,
-                title: "Dynamic Pricing Engine",
-                category: "WooCommerce",
-                industry: "Manufacturing",
-                description: "Complex tiered pricing with volume discounts, customer-specific pricing, and real-time inventory-based adjustments.",
-                technologies: ["PHP", "WooCommerce Hooks", "Custom Tables", "AJAX"],
-                image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: false
-            },
-            {
-                id: 10,
-                title: "LMS Course Marketplace",
-                category: "Custom Plugins",
-                industry: "Education",
-                description: "Multi-instructor learning platform with course bundles, drip content, certificates, and revenue sharing system.",
-                technologies: ["LearnDash", "WooCommerce", "Elementor", "Custom PHP"],
-                image: "https://images.unsplash.com/photo-1501504905252-473c87e0a86b?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: true
-            },
-            {
-                id: 11,
-                title: "Real Estate Listing Portal",
-                category: "WordPress Development",
-                industry: "Real Estate",
-                description: "Property listings with advanced search filters, map integration, agent dashboards, and MLS API synchronization.",
-                technologies: ["PHP", "Google Maps API", "ACF Pro", "Cron Jobs"],
-                image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: false
-            },
-            {
-                id: 12,
-                title: "Subscription Billing System",
-                category: "WooCommerce",
-                industry: "SaaS",
-                description: "Custom subscription logic with proration, trial management, dunning flows, and Stripe Billing integration.",
-                technologies: ["WooCommerce Subscriptions", "Stripe API", "PHP", "Webhooks"],
-                image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=800",
-                projectUrl: "#",
-                featured: false
-            }
-        ];
+        const portfolioProjects = [{"id":2805,"title":"Seacoast Floor Supply","category":"Advanced Custom Field","industry":"Flooring, Manufacturing","description":"Seacoast Floor Supply is a flooring supply business serving contractors, designers, and homeowners. The website showcases a range of flooring products, including unfinished and prefinished wood flooring, vinyl plank, finishes, abrasives, flooring tools, and installation supplies.\nThe website supports product discovery and customer enquiries, alongside information about showrooms, consultations, and product services.","technologies":["Advanced Custom Field","Ajax Search &amp; Listing","Custom JS\/JQuery","PHP"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/Employee-Calculator-Seacoast-Floor-Supply-08-26-2026_04_01_PM.webp","projectUrl":"https:\/\/seacoastfloor.com\/","featured":false},{"id":2801,"title":"Room 17 Math","category":"Elementor Pro","industry":"Education, Nonprofit, Tutoring","description":"Room 17 Math is a nonprofit educational organization focused on making mathematics enjoyable and accessible for children. It provides personalized math tutoring, after-school programs, and math camps designed to improve students&#8217; mathematical skills, confidence, and problem-solving abilities.\nThe organization promotes activity-based learning through engaging experiences rather than traditional worksheets and timed tests.","technologies":["Elementor Pro","PHP","WP Rocket"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/room17.webp","projectUrl":"https:\/\/room17math.com","featured":false},{"id":2798,"title":"Project Cost Calculator \u2013 WordPress Plugin","category":"","industry":"Digital Agencies, Digital Marketing, SEO, Web Development","description":"A WordPress plugin that enables digital agencies to build and display project cost calculators without writing code. Visitors can select project requirements, view estimated costs, and better understand the potential investment before contacting the agency.","technologies":[],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/Screenshot_1.webp","projectUrl":"https:\/\/wordpress.org\/plugins\/project-cost-calculator","featured":false},{"id":2795,"title":"Panama Equity \u2013 Real Estate Website &amp; Custom Property Indexing Plugin","category":"Ajax Search &amp; Listing","industry":"Real Estate &amp; Property Management","description":"A real estate platform showcasing residential, commercial, luxury, beachfront, and investment properties across Panama. The website supports property discovery for users looking to buy, rent, or sell real estate.","technologies":["Ajax Search &amp; Listing","Cron Jobs","Custom JS\/JQuery","MySQL","PHP"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/panama.webp","projectUrl":"https:\/\/www.panamaequity.com\/","featured":false},{"id":2792,"title":"OKBRAND \u2013 Agricultural Fencing &amp; Wire Products","category":"AJAX","industry":"Agriculture &amp; Fencing, Manufacturing","description":"Developed a custom WordPress fence estimation calculator plugin using Claude Code, featuring a dynamic multi-step AJAX workflow, Google Maps integration for area calculations, automated fencing cost estimation, and entry import functionality. Built custom filtering and interactive calculation features to streamline the customer estimation process.","technologies":["AJAX","Claude Code","Custom Plugin","Google Maps API","JavaScript","PHP","WordPress"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/okbrand.webp","projectUrl":"https:\/\/1095246.us12.myftpupload.com\/calculator\/","featured":false},{"id":2789,"title":"NEVOA \u2013 Professional Association for Legal Professionals","category":"Ajax Search &amp; Listing","industry":"Legal Services, Professional Associations","description":"NEVOA is a Dutch professional association representing business and commercial legal professionals. It supports members through professional development, networking, education, and quality assurance.","technologies":["Ajax Search &amp; Listing","Custom JS\/JQuery","Gravity Form","PHP"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/novea.webp","projectUrl":"https:\/\/www.nevoa.nl\/","featured":false},{"id":2785,"title":"MIOWIFI \u2013 Global Portable WiFi Connectivity","category":"ACF","industry":"ECommerce, Telecommunications, Travel Technology","description":"An international portable WiFi service that allows travelers to rent or purchase WiFi hotspot devices for internet connectivity across 150+ countries.","technologies":["ACF","Advanced Custom Field","Custom JS\/JQuery","PHP","WooCommerce","WP Rocket","WPML"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/mio.webp","projectUrl":"https:\/\/miowifi.com\/","featured":false},{"id":2782,"title":"Mid West Castletroy Physio \u2013 Physiotherapy Limerick","category":"Elementor Pro","industry":"Education, Healthcare, Rehabilitation","description":"A professional physiotherapy clinic website providing information about physiotherapy treatments, injury rehabilitation, specialist clinics, patient resources, and corporate ergonomic services in Limerick, Ireland.","technologies":["Elementor Pro","WordPress","WP Rocket","WPForms"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/midwest.webp","projectUrl":"https:\/\/midwestphysio.ie\/","featured":false},{"id":2779,"title":"Machi-Systems \u2013 Web Design Scranton | Building a Better Web","category":"BuddyBoss","industry":"Agency, Corporate Website, Digital Services, Information Technology","description":"Machi-Systems is a web design and application development agency website focused on helping small businesses establish and grow their online presence.\nThe website showcases the agency&#8217;s services, including custom website development, mobile application development, digital marketing, website hosting, and ongoing maintenance and support.","technologies":["BuddyBoss","Elementor Pro","PHP"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/machi-s.webp","projectUrl":"https:\/\/machi-systems.com\/","featured":false},{"id":2775,"title":"K\u2022Laser UK \u2013 Advanced Medical Lasers","category":"ACF","industry":"ECommerce, Education, Health","description":"A corporate and e-commerce-enabled website promoting advanced medical laser equipment, clinical applications, professional training, and educational resources for healthcare professionals.","technologies":["ACF","Ajax Search &amp; Listing","Custom JS\/JQuery","Custom Taxonomies &amp; Post Meta","Google Maps API","learnpress","Memberpress","PHP","WooCommerce"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/klaser.webp","projectUrl":"https:\/\/klaseruk.co.uk\/","featured":false},{"id":2771,"title":"International Human Rights Clinic \u2013 Harvard Law School","category":"Contact Form 7","industry":"Higher Education, Legal Services, Research &amp; Education","description":"An institutional website for Harvard Law School&#8217;s International Human Rights Clinic, showcasing its global human rights advocacy, legal research, educational initiatives, publications, and clinical projects.\ufeff\ufeff","technologies":["Contact Form 7","GeneratePress","MalCare","PHP"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/human-legal.webp","projectUrl":"https:\/\/humanrightsclinic.law.harvard.edu\/","featured":false},{"id":2766,"title":"Azenco Outdoor | Premium Aluminum Pergola, Cabana &amp; Carport","category":"ACF","industry":"Architecture &amp; Design, Construction, Manufacturing, Outdoor Living","description":"A premium outdoor living brand showcasing custom aluminum pergolas, patio covers, awnings, cabanas, and carports for residential and commercial properties.","technologies":["ACF","Advanced Custom Field","Custom Taxonomies &amp; Post Meta","PHP"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/homepage.webp","projectUrl":"https:\/\/azenco-outdoor.com\/","featured":false},{"id":2743,"title":"Asia Direct","category":"ACF","industry":"ECommerce, WooCommerce","description":"An eCommerce platform for showcasing and selling safety lighting solutions and safety equipment.","technologies":["ACF","Custom JS\/JQuery","jet filter","MySQL","PHP","WooCommerce"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/11\/featured-image.webp","projectUrl":"https:\/\/asiadirect.wpenginepowered.com\/","featured":false},{"id":1514,"title":"Ayokay Outreach &#8211; WooCommerce REPORTiT","category":"Custom Taxonomies &amp; Post Meta","industry":"ECommerce","description":"Extended the core capabilities of the WooCommerce REPORTiT plugin to meet specialized business reporting requirements.","technologies":["Custom Taxonomies &amp; Post Meta","MySQL","PHP","WooCommerce","WooCommerce REPORTiT"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/09\/report-page.png","projectUrl":"https:\/\/ayokay.work\/outreachsupplies","featured":false},{"id":1504,"title":"Visit Aiken SC &#8211; Official Tourism Portal","category":"Advanced Custom Field","industry":"Turism","description":"An official tourism website for Aiken, South Carolina, designed to provide visitors with destination information and resources for exploring the area.","technologies":["Advanced Custom Field","Ajax Search &amp; Listing","Event Manager","Open Weather API"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/09\/Visit-Aiken-SC-09-14-2026_03_52_PM-scaled.png","projectUrl":"https:\/\/www.visitaikensc.com\/","featured":false},{"id":1501,"title":"A Healthy Education \u2013 Online Healthcare Training &amp; Certification Platform","category":"Custom JS\/JQuery","industry":"ECommerce, Education, Health","description":"A Healthy Education is an online and on-site professional training platform providing OSHA, HIPAA, infection control, bloodborne pathogens, and CPR training for dental and nursing healthcare professionals.","technologies":["Custom JS\/JQuery","Elementor Pro","Learndash","WooCommerce","WP Rocket","Zoom API Integration"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/09\/Cathie-Collier-RDH-A-Healthy-Education-09-14-2026_03_45_PM-scaled.png","projectUrl":"https:\/\/ahealthyeducation.com\/","featured":false},{"id":1389,"title":"Choicelunch \u2013 School Lunch Delivery Platform","category":"Astra Pro Theme","industry":"Business, Education, Food &amp; Beverage, Food Delivery Services, School Catering","description":"A school lunch delivery service providing fresh, nutritious, customizable meals to students across California.","technologies":["Astra Pro Theme","Custom JS\/JQuery","Elementor Pro","SCSS\/CSS3","Unlimited Addon For Elementor"],"image":"https:\/\/spsolutionstech.com\/wp-content\/uploads\/2026\/09\/School-Lunch-Delivery-in-California-Choicelunch-School-Lunch-Done-Right-09-14-2026_01_03_PM-scaled.png","projectUrl":"https:\/\/www.choicelunch.com\/","featured":false}];
 
         // Portfolio Rendering Logic
         let currentFilter = 'all';
@@ -1708,10 +1584,38 @@
                     </div>
                 `;
 
+                const image = card.querySelector('.portfolio-img img');
+                let imageSettled = false;
+                const revealCard = () => {
+                    setTimeout(() => card.classList.add('visible'), 50);
+                };
+                const handleImageLoad = () => {
+                    if (imageSettled) return;
+                    imageSettled = true;
+                    revealCard();
+                };
+                const showImageFallback = () => {
+                    if (imageSettled) return;
+                    imageSettled = true;
+                    image.hidden = true;
+                    const fallback = document.createElement('span');
+                    fallback.className = 'portfolio-image-fallback';
+                    fallback.textContent = 'Image unavailable';
+                    image.parentElement.appendChild(fallback);
+                    revealCard();
+                };
+
+                image.addEventListener('load', handleImageLoad, { once: true });
+                image.addEventListener('error', showImageFallback, { once: true });
                 container.appendChild(card);
 
-                // Trigger animation after append
-                setTimeout(() => card.classList.add('visible'), 50);
+                if (image.complete) {
+                    if (image.naturalWidth > 0) {
+                        handleImageLoad();
+                    } else {
+                        showImageFallback();
+                    }
+                }
             });
 
             // Handle Load More visibility
