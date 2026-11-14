@@ -149,6 +149,72 @@
             color: var(--color-text-muted);
         }
 
+        .companyicon{
+            width: 40px;
+            height: 40px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: var(--fs-sm);
+            font-weight: var(--font-weight-semibold);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        .about-section {
+            padding-top: 2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            /* box-shadow: 0 12px 30px rgba(27, 42, 74, 0.06); */
+        }
+
+        .about-card h3 {
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .about-card p {
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .about-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .about-point {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.65rem 0.9rem;
+            border-radius: var(--radius-full);
+            background: rgba(27, 42, 74, 0.05);
+            border: 1px solid rgba(27, 42, 74, 0.08);
+            color: var(--color-primary);
+            font-size: var(--fs-sm);
+            font-weight: var(--font-weight-medium);
+        }
+
         /* Buttons */
         .btn {
             display: inline-flex;
@@ -964,6 +1030,9 @@
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
@@ -997,7 +1066,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="about" class="hero">
+        <section class="hero">
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
@@ -1007,7 +1076,7 @@
                         </div>
                         <h1 class="hero-title">Engineering High-Performance <span class="text-accent">WordPress</span> Solutions.</h1>
                         <p class="hero-description">
-                            Sagar Parmar is a WordPress Backend Developer & Plugin Architect with 6+ years of expertise in crafting scalable, secure, and enterprise-grade web applications.
+                            Hello, My name is Sagar Parmar, I am a WordPress Backend Developer & Plugin Architect with 6+ years of expertise in crafting scalable, secure, and enterprise-grade web applications.
                         </p>
                         <div class="hero-actions">
                             <a href="#contact" class="btn btn-primary">Let's Work Together</a>
@@ -1035,13 +1104,46 @@
                     <div class="hero-image-container">
                         <div class="hero-image-bg" style="background: linear-gradient(135deg, var(--color-accent) 0%, #FF8C42 50%, var(--color-primary) 100%); padding: 2px; border-radius: var(--radius-lg);">
                             <div style="width: 100%; height: 100%; border-radius: calc(var(--radius-lg) - 2px); overflow: hidden;">
-                                <img src="https://spsolutionstech.com/wp-content/uploads/2026/09/Firefly-2-e1790194149932.png" alt="Sagar Parmar" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2JMZZ6hXQc6-4lynrmcC6b3KGRU5d_Kcs2ti7hd95mz_PFgMBDVmwEECKyNxbsvIc0eZVdD7orRNi6iVGifjb8PE3XYRqBI-CMmOn1nPGFTBUa2PsscChD5D-G-jNNhEBemQdxCFW2SIyhr11WAK4sw9qZqsJ96qKKML2MUInEIA8kFpyDTbqLMHY_CU/s1600/Firefly-2-e1790194149932.png" alt="Sagar Parmar" style="width: 100%; height: 100%; object-fit: cover;">
+                                
                         </div>
                         <div class="experience-badge">
                             <span class="years">6+</span>
                             <span class="text">Years of<br>Experience</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section" style="padding: 6rem 0;">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">About Me</span>
+                    <h2 class="section-title">I build WordPress systems that are fast, clean, and aligned with business goals.</h2>
+                    <p class="section-subtitle">From custom plugins and WooCommerce flow improvements to performance tuning and API integrations, I help businesses turn complex ideas into reliable digital experiences.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card reveal">
+                        <h3>Practical engineering with business impact.</h3>
+                        <p>I'm Sagar Parmar, a WordPress developer focused on backend logic, plugin architecture, and performance-first development. I enjoy solving the real problems behind a website—whether that's improving checkout flow, reducing server load, or creating custom workflows that save teams time.</p>
+                        <p>My work blends technical depth with a strong understanding of how digital products need to perform, scale, and convert. I value clean code, smart architecture, and communication that keeps projects moving.</p>
+                    </div>
+
+                    <div class="about-card reveal">
+                        <h3>What I bring</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">WordPress</span>
+                            <span class="skill-tag">WooCommerce</span>
+                            <span class="skill-tag">Plugins</span>
+                            <span class="skill-tag">Themes</span>
+                            <span class="skill-tag">Customization</span>
+                            <span class="skill-tag">Performance</span>
+                            <span class="skill-tag">API</span>
+                            <span class="skill-tag">Strategy</span>
+                        </div>
+                        <p style="margin-top: 1.5rem;">I thrive on turning messy requirements into structured, scalable solutions that are easy to maintain and built to grow with the business.</p>
                     </div>
                 </div>
             </div>
@@ -1209,10 +1311,11 @@
                     <!-- E2M Solutions -->
                     <div class="timeline-item reveal">
                         <div class="timeline-left">
-                            <span class="timeline-date">July 2024 – Present</span>
-                            <h3 class="timeline-title">WordPress Developer & Solutions Architect</h3>
+                            <span class="timeline-date">July 2024 – Sep 2026</span>
+                            <h3 class="timeline-title">WordPress Developer</h3>
                             <div class="timeline-company-row">
-                                <img src="https://spsolutionstech.com/wp-content/uploads/2026/10/e2m1111.svg" alt="E2M Solutions" class="timeline-company-logo">
+                                <!-- <img src="https://spsolutionstech.com/wp-content/uploads/2026/10/e2m1111.svg" alt="E2M Solutions" class="timeline-company-logo"> -->
+                                 <svg class="companyicon" xmlns="http://www.w3.org/2000/svg" width="61" height="62" viewBox="0 0 61 62" fill="none"><path d="M0 0V31.0022H30.5024V62H61V0H0ZM22.3418 25.2706H8.15819V5.73092H22.2002V10.3367H13.7925V13.0416H21.1671V17.6313H13.7925V20.6803H22.3418V25.27V25.2706ZM45.7296 5.5802C50.1177 5.5802 53.1201 8.18455 53.1201 12.0852C53.1201 15.4357 50.0482 17.7249 47.3149 19.6948C46.8902 19.9981 46.0554 20.6878 46.0127 20.7467H53.2324V25.4213H38.9346V23.3783C38.9346 20.0688 40.7897 18.9319 44.5555 15.997C46.5229 14.4588 47.3876 13.5799 47.3876 12.2284C47.3876 11.0916 46.6217 10.3293 45.3775 10.3293C44.0459 10.3293 42.9567 11.4662 42.4178 12.7873L38.2701 10.9043C38.9932 8.48722 41.4836 5.57958 45.7302 5.57958L45.7296 5.5802ZM56.6594 56.2709H51.0813V46.5457L47.4297 55.1645H44.0746L40.4212 46.5457V56.2709H34.8455V36.7312H40.747L45.7436 47.9698L50.756 36.7312H56.6594V56.2709Z" fill="black"/></svg>
                                 <p class="timeline-company">E2M Solutions</p>
                             </div>
                         </div>
@@ -1233,7 +1336,8 @@
                             <span class="timeline-date">December 2020 – June 2024</span>
                             <h3 class="timeline-title">WordPress Developer</h3>
                             <div class="timeline-company-row">
-                                <img src="https://spsolutionstech.com/wp-content/uploads/2026/10/uwp-am-1.svg" alt="UnlimitedWP" class="timeline-company-logo">
+                                <svg class="companyicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" fill="none"><g transform="translate(0.000000,150.000000) scale(0.100000,-0.100000)" fill="#000" stroke="none"><path d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m914 580 c94 -24 167 -64 242 -132 256 -235 265 -625 21 -871 -78 -78 -149 -121 -262 -158 -102 -34 -251 -32 -353 4 -198 69 -348 236 -408 454 -34 123 5 326 86 450 77 117 210 216 345 254 85 25 231 24 329 -1z"/><path d="M300 890 c0 -5 5 -10 10 -10 6 0 10 -33 10 -77 0 -137 28 -183 109 -183 80 0 104 35 109 163 4 95 5 97 28 97 14 0 26 -6 28 -12 62 -209 78 -248 100 -248 20 0 25 8 36 58 29 132 40 140 64 45 10 -37 20 -76 23 -85 2 -11 14 -18 28 -18 20 0 26 7 35 43 5 23 14 56 19 72 5 17 15 56 23 88 7 33 18 57 25 57 7 0 13 5 13 10 0 6 -18 10 -40 10 -22 0 -40 -4 -40 -10 0 -5 7 -10 15 -10 8 0 15 -5 15 -11 0 -19 -40 -189 -48 -203 -5 -9 -61 175 -62 202 0 6 7 12 15 12 8 0 15 5 15 10 0 6 -25 10 -55 10 -30 0 -55 -4 -55 -10 0 -5 7 -10 15 -10 19 0 20 -51 1 -111 -8 -24 -17 -56 -20 -71 -4 -16 -10 -28 -14 -28 -4 0 -18 46 -32 102 -18 76 -21 103 -12 106 6 2 12 8 12 13 0 5 -43 9 -95 9 -57 0 -95 -4 -95 -10 0 -5 7 -10 15 -10 12 0 15 -17 15 -95 0 -114 -14 -145 -65 -145 -53 0 -66 24 -72 139 -5 89 -4 101 11 101 9 0 16 5 16 10 0 6 -22 10 -50 10 -27 0 -50 -4 -50 -10z"/><path d="M980 890 c0 -5 7 -10 15 -10 13 0 15 -20 15 -120 0 -100 -2 -120 -15 -120 -8 0 -15 -4 -15 -10 0 -6 28 -10 65 -10 37 0 65 4 65 10 0 6 -11 10 -25 10 -22 0 -25 4 -25 39 0 37 1 39 41 44 57 7 99 49 99 96 0 42 -7 54 -37 70 -27 14 -183 15 -183 1z m157 -22 c16 -13 17 -82 3 -109 -8 -13 -21 -19 -45 -19 l-35 0 0 68 c0 38 3 72 7 76 9 9 53 -1 70 -16z"/></g></svg>
+                                <!-- <img src="https://spsolutionstech.com/wp-content/uploads/2026/10/uwp-am-1.svg" alt="UnlimitedWP" class="timeline-company-logo"> -->
                                 <p class="timeline-company">UnlimitedWP</p>
                             </div>
                         </div>
@@ -1254,7 +1358,8 @@
                             <span class="timeline-date">2019 – 2020</span>
                             <h3 class="timeline-title">Junior Software Engineer</h3>
                             <div class="timeline-company-row">
-                                <img src="https://spsolutionstech.com/wp-content/uploads/2026/10/lb-1.svg" alt="LogixBuilt" class="timeline-company-logo">
+                                <svg class="companyicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none"><path d="M0 0 C1.25 0.41 2.51 0.83 3.8 1.25 C28.74 10.07 48.22 28.5 60.08 52.01 C70.71 75.09 73.1 102.82 65 127 C64.59 128.25 64.18 129.51 63.75 130.8 C54.93 155.74 36.5 175.22 12.99 187.08 C-10.09 197.71 -37.82 200.1 -62 192 C-63.88 191.38 -63.88 191.38 -65.8 190.75 C-90.74 181.93 -110.22 163.5 -122.08 139.99 C-132.71 116.91 -135.1 89.18 -127 65 C-126.59 63.75 -126.17 62.49 -125.75 61.2 C-116.93 36.26 -98.5 16.78 -74.99 4.92 C-51.91 -5.71 -24.18 -8.1 0 0 Z " fill="#000" transform="translate(131,4)"/><path d="M0 0 C1.54 1.14 3.06 2.31 4.56 3.5 C5.32 4.09 6.07 4.68 6.85 5.29 C21.72 17.69 33.15 38.19 35.56 57.5 C6.91 83.35 32.69 106.85 15.06 126.75 C13.57 128.34 12.07 129.92 10.56 131.5 C10.01 132.13 9.46 132.75 8.89 133.4 C-3.79 147.27 -25.02 155.65 -43.57 156.61 C-45.78 156.67 -47.98 156.69 -50.19 156.69 C-51.36 156.69 -51.36 156.69 -52.55 156.69 C-58.98 156.63 -65.15 155.88 -71.44 154.5 C-70.1 151.49 -68.64 149.5 -66.25 147.25 C-63.78 144.91 -61.53 142.47 -59.32 139.89 C-54.14 133.92 -48.45 128.47 -42.82 122.92 C-38.44 118.59 -34.25 114.2 -30.24 109.52 C-25.89 104.64 -21.12 100.15 -16.46 95.57 C-12.73 91.87 -9.09 88.17 -5.68 84.18 C-3.05 81.1 -0.24 78.7 2.94 76.19 C7.99 71.33 8.49 67.08 8.69 60.38 C8.72 57.41 8.67 54.47 8.56 51.5 C5.59 51.5 2.62 51.5 -0.44 51.5 C5.31 44.75 5.31 44.75 7.56 42.5 C7.89 36.23 8.22 29.96 8.56 23.5 C-15.86 23.5 -40.28 23.5 -65.44 23.5 C-65.44 39.67 -65.44 55.84 -65.44 72.5 C-72.37 72.5 -79.3 72.5 -86.44 72.5 C-85.76 62.64 -84.04 53.08 -82.25 43.38 C-81.94 41.66 -81.62 39.94 -81.31 38.23 C-80.67 34.72 -80.03 31.21 -79.39 27.7 C-78.47 22.71 -77.57 17.71 -76.68 12.71 C-76.27 10.45 -75.86 8.18 -75.45 5.92 C-75.19 4.48 -74.94 3.04 -74.68 1.6 C-74.32 -0.38 -73.96 -2.37 -73.6 -4.36 C-73.4 -5.48 -73.2 -6.6 -72.99 -7.75 C-72.44 -10.5 -72.44 -10.5 -71.44 -13.5 C-48.67 -23.13 -19.22 -12.98 0 0 Z " fill="#FCFDFE" transform="translate(150.4375,30.5)"/><path d="M0 0 C-0.67 8.2 -1.94 16.27 -3.31 24.38 C-3.42 25.04 -3.53 25.7 -3.65 26.38 C-5.12 35.17 -6.73 43.91 -8.55 52.64 C-10.14 60.41 -11.36 68.23 -12.52 76.08 C-13.61 83.26 -15.22 89.88 -17 97 C-3.8 97 9.4 97 23 97 C23 99.31 23 101.62 23 104 C28.94 104 34.88 104 41 104 C41 101.69 41 99.38 41 97 C43.31 97 45.62 97 48 97 C48 90.73 48 84.46 48 78 C45.69 78 43.38 78 41 78 C41 68.43 41 58.86 41 49 C49.91 49 58.82 49 68 49 C61.26 57.99 61.26 57.99 57.51 61.65 C56.72 62.43 55.94 63.2 55.12 64 C54.32 64.79 53.52 65.57 52.69 66.38 C51.06 67.96 49.44 69.55 47.82 71.15 C47.11 71.84 46.4 72.53 45.67 73.25 C43.92 74.91 43.92 74.91 43 77 C51.25 77 59.5 77 68 77 C64.12 82.18 60.64 86.61 56.06 91 C52.11 94.87 48.36 98.79 44.77 103.01 C41.8 106.34 38.58 109.43 35.4 112.57 C33.36 114.63 31.44 116.73 29.56 118.94 C26.26 122.81 22.67 126.36 19.05 129.93 C16.4 132.56 13.86 135.23 11.44 138.06 C8.65 141.29 5.8 144.46 2.88 147.56 C2.07 148.43 1.26 149.3 0.43 150.19 C-2 152 -2 152 -4.49 151.98 C-22.84 144.79 -35.34 125.02 -43 108 C-46.87 98.24 -48.37 88.79 -48.31 78.31 C-48.31 76.72 -48.31 76.72 -48.3 75.1 C-47.97 52.8 -39.33 32.26 -24 16 C-6.87 0 -6.87 0 0 0 Z " fill="#FCFCFD" transform="translate(62,24)"/><path d="M0 0 C0.33 0 0.66 0 1 0 C1.33 2.64 1.66 5.28 2 8 C-0.36 9.18 -1.53 9.04 -4.13 8.88 C-4.94 8.83 -5.74 8.78 -6.57 8.73 C-7.42 8.68 -8.26 8.62 -9.12 8.56 C-10.4 8.48 -10.4 8.48 -11.7 8.4 C-13.8 8.27 -15.9 8.14 -18 8 C-18 7.67 -18 7.34 -18 7 C-12.06 7 -6.12 7 0 7 C0 4.69 0 2.38 0 0 Z " fill="#B5C5E0" transform="translate(103,121)"/></svg>
+                                <!-- <img src="https://spsolutionstech.com/wp-content/uploads/2026/10/lb-1.svg" alt="LogixBuilt" class="timeline-company-logo"> -->
                                 <p class="timeline-company">LogixBuilt</p>
                             </div>
                         </div>
@@ -1346,14 +1451,14 @@
                                 <div class="contact-info-icon"><i data-lucide="mail"></i></div>
                                 <div class="contact-info-text">
                                     <h4>Email Me</h4>
-                                    <p>contact@spsolutionstech.com</p>
+                                    <p><a href="mailto:sagarparmar.sjp@gmail.com">sagarparmar.sjp@gmail.com</a></p>
                                 </div>
                             </div>
                             <div class="contact-info-item">
                                 <div class="contact-info-icon"><i data-lucide="phone"></i></div>
                                 <div class="contact-info-text">
                                     <h4>Call Me</h4>
-                                    <p>+91 (REDACTED)</p>
+                                    <p><a href="tel:+919898171703">+91 9898171703</a></p>
                                 </div>
                             </div>
                             <div class="contact-info-item">
